@@ -12,6 +12,7 @@ const ServiceAgreementPage = () => {
         <meta property="og:description" content="Read the ProEssayWorks Service Agreement. Understand the terms and conditions for using our essay writing and academic support services." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://proessayworks.com/service-agreement" />
+        <meta name="keywords" content="service agreement, terms, conditions, refund, money back" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

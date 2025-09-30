@@ -12,6 +12,7 @@ const PrivacyNoticePage = () => {
         <meta property="og:description" content="Read the ProEssayWorks Privacy Notice. Learn how we protect your personal data and privacy when you use our essay writing and academic services." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://proessayworks.com/privacy" />
+        <meta name="keywords" content="privacy, data protection, plagiarism checker, personal information" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

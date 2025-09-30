@@ -1,5 +1,7 @@
 "use client";
 
+// SEO Keywords: urgent homework, essay writers, do my assignment, pay for research paper, college essay writing, assignment support
+
 import React from "react";
 import { FaStar, FaSearch, FaRegFileAlt, FaClock } from "react-icons/fa";
 import { PiRobotLight } from "react-icons/pi";

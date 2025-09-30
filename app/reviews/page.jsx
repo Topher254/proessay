@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from "next/navigation";
+import Head from 'next/head';
 
 export default function Testimonials() {
   const [openFAQ, setOpenFAQ] = useState(null);
@@ -313,6 +314,9 @@ export default function Testimonials() {
  
   return (
     <section className="bg-gradient-to-br from-indigo-50 to-indigo-100 min-h-screen p-8" aria-label="Student Testimonials and FAQ">
+      <Head>
+        <meta name="keywords" content="reviews, testimonials, student feedback, essay writers, assignment writing service" />
+      </Head>
       <div className="max-w-7xl mx-auto">
         {/* Testimonials Section */}
         <header className="text-center mb-12">

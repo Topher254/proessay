@@ -1,5 +1,7 @@
 "use client";
 
+// SEO Keywords: essay writers, assignment writing service, reviews, blog, contact, order essay, get help
+
 import React, { useState, useRef, useEffect } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { motion, AnimatePresence } from 'framer-motion';

@@ -12,6 +12,7 @@ const MoneyBackPromisePage = () => {
         <meta property="og:description" content="Learn about the ProEssayWorks money-back guarantee. We stand behind our essay writing services with a comprehensive refund policy for your peace of mind." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://proessayworks.com/money-back" />
+        <meta name="keywords" content="refund, money back, guarantee, essay for sale, service agreement" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

@@ -143,6 +143,7 @@ export default function WritersPage() {
         <meta property="og:description" content="Meet the top essay writers at ProEssayWorks. Our academic experts are ready to help you with any assignment, ensuring quality and originality every time." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://proessayworks.com/writers" />
+        <meta name="keywords" content="essay writers, professional writers, writing team, scholarship essay writing service, argumentative essay writing service, college essay writing" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

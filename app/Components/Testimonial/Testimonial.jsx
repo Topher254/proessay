@@ -1,3 +1,5 @@
+// SEO Keywords: reviews, testimonials, student feedback, assignment writing service, essay writers
+
 "use client";
 
 import { useState } from 'react';

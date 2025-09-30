@@ -8,6 +8,7 @@ const EthicsCodePage = () => {
       <Head>
         <title>Academic Ethics Code | ProEssayWorks</title>
         <meta name="description" content="Read the ProEssayWorks Ethics Code. We uphold academic integrity and ethical standards in all our essay writing and academic support services." />
+        <meta name="keywords" content="academic integrity, ethics, plagiarism checker, writing policy" />
         <meta property="og:title" content="Academic Ethics Code | ProEssayWorks" />
         <meta property="og:description" content="Read the ProEssayWorks Ethics Code. We uphold academic integrity and ethical standards in all our essay writing and academic support services." />
         <meta property="og:type" content="website" />

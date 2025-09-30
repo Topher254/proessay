@@ -2,6 +2,8 @@ import React from 'react';
 import { Shield, Clock, DollarSign, CreditCard, FileText, Award } from 'lucide-react';
 import { useNavigate } from "react-router-dom";
 
+// SEO Keywords: privacy, scholarship essay writing service, urgent homework, assignment support, academic integrity, refund, money back, plagiarism checker
+
 export default function Benefits() {
   const navigate = useNavigate();
 

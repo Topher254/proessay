@@ -15,7 +15,7 @@ const Hero = () => {
 
   return (
     <section className="bg-gradient-to-r from-indigo-50 to-indigo-50 py-16 px-6" aria-label="ProEssayWorks Hero">
-      <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between">
         
         {/* Left Section */}
         <header className="md:w-1/2 space-y-6 text-center md:text-left">

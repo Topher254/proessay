@@ -1,5 +1,7 @@
 "use client";
 
+// SEO Keywords: essay writers, assignment writing service, reviews, testimonials, contact, privacy, service agreement
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { FaPencilAlt } from "react-icons/fa";

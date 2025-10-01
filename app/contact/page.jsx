@@ -24,6 +24,7 @@ const ContactPage = () => {
       <Head>
         <title>Contact ProEssayWorks | Essay Writing Help</title>
         <meta name="description" content="Contact ProEssayWorks for expert essay writing, editing, and academic support. Reach us by email, phone, or WhatsApp for fast, friendly help." />
+        <meta name="keywords" content="essay writing help, urgent homework, support, do my assignment, do my coursework, contact" />
         <meta property="og:title" content="Contact ProEssayWorks | Essay Writing Help" />
         <meta property="og:description" content="Contact ProEssayWorks for expert essay writing, editing, and academic support. Reach us by email, phone, or WhatsApp for fast, friendly help." />
         <meta property="og:type" content="website" />

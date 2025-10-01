@@ -21,6 +21,7 @@ export default function Page() {
         <meta property="og:description" content="Learn about ProEssayWorks, your trusted partner for essay writing, editing, and academic help. Meet our expert team and discover our mission to help students succeed." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://proessayworks.com/about" />
+        <meta name="keywords" content="essay writers, personal statement writing service, rewrite my essay, scholarship essay writing service, speech writing services, edit my essay, literature review writing service, admission essay writing service, analytical essay writing service, college essay writing" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

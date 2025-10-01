@@ -1,5 +1,7 @@
 "use client";
 
+// SEO Keywords: essay writing service, case study writing service, research paper writing, dissertation proposal writing service, book report writing service, speech writing services
+
 import React, { useState } from 'react';
 
 export default function Services() {

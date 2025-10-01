@@ -7,6 +7,7 @@ const CookieNoticePage = () => {
       <Helmet>
         <title>Cookie Notice | ProEssayWorks</title>
         <meta name="description" content="Read the ProEssayWorks Cookie Notice. Learn how we use cookies to enhance your experience on our essay writing and academic support website." />
+        <meta name="keywords" content="privacy, cookies, plagiarism checker, cookie policy" />
         <meta property="og:title" content="Cookie Notice | ProEssayWorks" />
         <meta property="og:description" content="Read the ProEssayWorks Cookie Notice. Learn how we use cookies to enhance your experience on our essay writing and academic support website." />
         <meta property="og:type" content="website" />

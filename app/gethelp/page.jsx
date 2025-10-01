@@ -7,6 +7,7 @@ import {
 import { API_BASE } from '../lib/apiConfig';
 import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
+import Head from 'next/head';
 
 const StudentAssignmentForm = () => {
   // Service pricing configuration
@@ -288,6 +289,9 @@ const StudentAssignmentForm = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-indigo-100 py-12 px-4 sm:px-6 lg:px-8">
+      <Head>
+        <meta name="keywords" content="do my assignment, coursework help, urgent homework, essay writers, assignment support, write essays for money" />
+      </Head>
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-8 relative">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Book Assignment Help</h1>

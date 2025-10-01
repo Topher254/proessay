@@ -1,6 +1,8 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 
+// SEO Keywords: pricing, affordable essay writing, pay for dissertation, pay for thesis, write essays for money, refund, money back
+
 export default function Pricing() {
   const navigate = useNavigate();
 

@@ -42,6 +42,7 @@ const BlogHomePage = () => {
         <meta property="og:description" content="Expert essay writing tips, research strategies, and academic advice to help students excel. Explore our blog for the latest in academic writing and study skills." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://proessayworks.com/blog" />
+        <meta name="keywords" content="writing tips, research paper writing, dissertation proposal writing service, pay for thesis, argumentative essay writing service, expository essay writing service, analytical essay writing service, essay for sale" />
       </Head>
       <main className="min-h-screen bg-gradient-to-b from-indigo-50 to-indigo-50 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">

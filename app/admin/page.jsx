@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Eye, EyeOff, Calendar, User, Mail, Phone, FileText, Clock, Filter, LogOut, Trash2, Edit3, ArrowLeft, Download } from 'lucide-react';
 import { API_BASE } from '../lib/apiConfig';
+import Head from 'next/head';
 
 const AdminDashboard = () => {
   const [assignments, setAssignments] = useState([]);
@@ -250,6 +251,9 @@ const AdminDashboard = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <Head>
+        <meta name="keywords" content="order essay, capstone project writing service, case study writing service, plagiarism checker, assignment management, admin dashboard" />
+      </Head>
       {/* Header */}
       <div className="bg-white shadow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

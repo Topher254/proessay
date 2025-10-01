@@ -8,7 +8,9 @@ const PORT = process.env.API_PORT || 5000;
 
 // Add CORS middleware
 app.use(cors({
-  origin: 'http://localhost:3000', // Your frontend URL
+  origin: ['http://localhost:3000',
+    "http://192.168.100.2:3000"
+  ], // frontend URL
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));

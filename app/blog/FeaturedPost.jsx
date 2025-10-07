@@ -3,16 +3,18 @@ import Image from 'next/image';
 
 
 const FeaturedPost = ({ post, onClick }) => {
+  // Use the actual featured image if available, otherwise fallback
+  const imageUrl = post.mainImage?.asset?.url || '/research.png';
   return (
     <div 
       className="bg-white rounded-2xl shadow-xl overflow-hidden cursor-pointer"
       onClick={onClick}
     >
       <div className="md:flex">
-        {/* Image placeholder */}
+        {/* Featured image */}
         <div className="md:w-2/5 bg-gradient-to-r from-indigo-500 to-purple-600 min-h-64 md:min-h-96 relative">
           <Image
-            src="/research.png"
+            src={imageUrl}
             alt={post.title + ' - Featured academic blog post image'}
             fill
             className="object-cover"
@@ -28,17 +30,17 @@ const FeaturedPost = ({ post, onClick }) => {
             <span className="ml-3 text-sm text-gray-500">{post.readTime}</span>
           </div>
           
-          <h2 className="text-3xl font-bold text-gray-900 mb-4 hover:text-indigo-600 transition-colors">
+          <h2 className="text-3xl font-bold text-black mb-4 hover:text-black transition-colors">
             {post.title}
           </h2>
           
-          <p className="text-lg text-gray-600 mb-6">{post.excerpt}</p>
+          <p className="text-lg text-black mb-6">{post.excerpt}</p>
           
           <div className="flex items-center">
             <div className="bg-gray-200 border-2 border-dashed rounded-xl w-12 h-12" />
             <div className="ml-4">
               <p className="text-sm font-medium text-gray-900">{post.author}</p>
-              <p className="text-sm text-gray-500">{post.date}</p>
+              <p className="text-sm text-gray-900">{post.date}</p>
             </div>
           </div>
         </div>

@@ -31,10 +31,10 @@ const BlogPostCard = ({ post, onClick }) => {
         <img src={post.mainImage.asset.url} alt={post.title} className="h-48 w-full object-cover" />
       )}
       <div className="p-6 flex-1 flex flex-col">
-        <h3 className="text-xl font-bold text-gray-900 mb-3 hover:text-indigo-600 transition-colors">
+        <h3 className="text-xl font-bold text-black mb-3 hover:text-black transition-colors">
           {post.title}
         </h3>
-        <p className="text-gray-600 mb-4 flex-1">{post.excerpt}</p>
+        <p className="text-black mb-4 flex-1">{post.excerpt}</p>
         <p className="text-xs text-gray-500 mb-4">{post.publishedAt ? new Date(post.publishedAt).toLocaleDateString() : ''}</p>
         <Link
           href={`/blog/post/${post.slug.current}`}

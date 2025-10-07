@@ -14,8 +14,8 @@ const NewsletterSignup = () => {
 
   return (
     <div className="text-center">
-      <h3 className="text-2xl font-bold text-gray-900 mb-2">Stay Updated with Academic Insights</h3>
-      <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+      <h3 className="text-2xl font-bold text-black mb-2">Stay Updated with Academic Insights</h3>
+      <p className="text-black mb-6 max-w-2xl mx-auto">
         Subscribe to our newsletter and receive the latest writing tips, research strategies, and academic resources directly to your inbox.
       </p>
       

@@ -7,30 +7,43 @@ import BlogPostCard from './BlogPostCard';
 import BlogCategoryFilter from './BlogCategoryFilter';
 import NewsletterSignup from './NewsletterSignup';
 import FeaturedPost from './FeaturedPost';
-import sanityClient from '../lib/sanityClient';
+
+const WP_API = 'https://proessayworks.com/myblog/wp-json/wp/v2/posts';
 
 const BlogHomePage = () => {
   const [posts, setPosts] = useState([]);
   const router = useRouter();
-  
+
   useEffect(() => {
-    sanityClient.fetch(
-      `*[_type == "post"] | order(publishedAt desc){
-        _id,
-        title,
-        slug,
-        publishedAt,
-        excerpt,
-        mainImage{
-          asset->{_id, url}
-        }
-      }`
-    ).then((data) => setPosts(data));
+    fetch(WP_API)
+      .then(res => res.json())
+      .then(async data => {
+        // Fetch featured images for each post
+        const postsWithImages = await Promise.all(data.map(async post => {
+          let imageUrl = '';
+          if (post.featured_media) {
+            try {
+              const mediaRes = await fetch(`https://proessayworks.com/myblog/wp-json/wp/v2/media/${post.featured_media}`);
+              const mediaData = await mediaRes.json();
+              imageUrl = mediaData.source_url;
+            } catch (e) {}
+          }
+          return {
+            _id: post.id,
+            title: post.title.rendered,
+            slug: { current: post.slug },
+            publishedAt: post.date,
+            excerpt: post.excerpt.rendered.replace(/<[^>]+>/g, ''),
+            mainImage: { asset: { url: imageUrl } },
+          };
+        }));
+        setPosts(postsWithImages);
+      });
   }, []);
 
   // Handle post click
   const handlePostClick = (slug) => {
-    router.push(`/blog/post/${slug}`);
+    router.push(`/blog/${slug}`);
   };
 
   return (
@@ -47,10 +60,10 @@ const BlogHomePage = () => {
       <main className="min-h-screen bg-gradient-to-b from-indigo-50 to-indigo-50 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <header className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
               Academic Insights Blog
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-black max-w-3xl mx-auto">
               Expert advice, writing tips, and research strategies to elevate your academic performance
             </p>
           </header>

@@ -36,6 +36,14 @@ export default function BlogPostPage() {
   const plainText = post.content?.rendered?.replace(/<[^>]+>/g, '') || '';
   const readTime = Math.max(1, Math.round(plainText.split(/\s+/).length / 200));
 
+  const cleanContent = post.content?.rendered
+    ?.replace(/color\s*:\s*#[0-9a-fA-F]{3,6}/gi, 'color:#111827')
+    ?.replace(/color\s*:\s*rgba?\([^)]+\)/gi, 'color:#111827')
+    ?.replace(/<span[^>]*style="[^"]*"[^>]*>/gi, '<span>')
+    ?.replace(/<p[^>]*style="[^"]*"[^>]*>/gi, '<p>')
+    ?.replace(/opacity\s*:\s*[0-9.]+/gi, '')
+    ?.replace(/filter\s*:\s*[^;"]*;?/gi, '');
+
   return (
     <>
       <Head>
@@ -56,7 +64,7 @@ export default function BlogPostPage() {
             <span>•</span>
             <span>{readTime} min read</span>
           </div>
-          <article className="prose prose-indigo max-w-none mb-12 text-gray-900" dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
+          <article className="prose prose-indigo max-w-none mb-12 text-gray-900" dangerouslySetInnerHTML={{ __html: cleanContent }} />
         </div>
       </main>
     </>

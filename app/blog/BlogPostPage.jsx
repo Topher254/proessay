@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { Helmet } from "react-helmet";
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Head from 'next/head';
+import Link from 'next/link';
 import { FaFacebook, FaTwitter, FaLinkedin } from 'react-icons/fa';
 
 const WP_API = 'https://proessayworks.com/myblog/wp-json/wp/v2/posts';
@@ -10,51 +11,75 @@ function estimateReadTime(text) {
   return Math.max(1, Math.round(words / 200)); // 200 wpm average
 }
 
-const BlogPostPage = () => {
-  const { slug } = useParams();
+export default function BlogPostPage() {
+  const router = useRouter();
+  const { slug } = router.query;
+
   const [post, setPost] = useState(null);
   const [cleanContent, setCleanContent] = useState('');
 
   useEffect(() => {
-    fetch(`${WP_API}?slug=${slug}`)
-      .then(res => res.json())
-      .then(data => {
+    if (!slug) return;
+
+    const fetchPost = async () => {
+      try {
+        const res = await fetch(`${WP_API}?slug=${slug}&_embed`);
+        const data = await res.json();
+
         if (data && data.length > 0) {
-          const content = data[0].content.rendered;
+          const p = data[0];
+          let content = p.content?.rendered || '';
 
-          // Clean inline color styles that make text faded
+          // 🔹 Clean faded inline styles
           const cleaned = content
-            .replace(/color\s*:\s*#[0-9a-fA-F]{3,6}/gi, 'color:#111827') // Replace light hex colors
-            .replace(/color\s*:\s*rgba?\([^)]+\)/gi, 'color:#111827') // Replace rgba values
-            .replace(/<span[^>]*style="[^"]*"[^>]*>/gi, '<span>') // Remove inline span styles
-            .replace(/<p[^>]*style="[^"]*"[^>]*>/gi, '<p>'); // Remove inline p styles
+            .replace(/color\s*:\s*#[0-9a-fA-F]{3,6}/gi, 'color:#111827')
+            .replace(/color\s*:\s*rgba?\([^)]+\)/gi, 'color:#111827')
+            .replace(/<span[^>]*style="[^"]*"[^>]*>/gi, '<span>')
+            .replace(/<p[^>]*style="[^"]*"[^>]*>/gi, '<p>')
+            .replace(/opacity\s*:\s*[0-9.]+/gi, '') // Remove opacity styles
+            .replace(/filter\s*:\s*[^;"]*;?/gi, ''); // Remove CSS filters
 
-          setPost(data[0]);
+          setPost(p);
           setCleanContent(cleaned);
         }
-      });
+      } catch (err) {
+        console.error('Failed to load post:', err);
+      }
+    };
+
+    fetchPost();
   }, [slug]);
 
-  if (!post) return <div>Loading...</div>;
+  if (!post) return <div className="min-h-screen flex justify-center items-center text-gray-600">Loading...</div>;
 
+  // Clean text for read-time estimation
   const plainText = cleanContent.replace(/<[^>]+>/g, '') || '';
   const readTime = estimateReadTime(plainText);
-  const shareUrl = window.location.href;
-  const shareText = encodeURIComponent(post.title.rendered);
+  const shareUrl = typeof window !== 'undefined' ? window.location.href : '';
+  const shareText = encodeURIComponent(post.title?.rendered || '');
+
+  // Featured image
+  const featuredImage =
+    post._embedded?.['wp:featuredmedia']?.[0]?.source_url ||
+    '/default-blog.jpg';
+
+  // Author name
+  const author =
+    post._embedded?.author?.[0]?.name || 'ProEssayWorks Team';
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-indigo-50 to-indigo-50 py-12 px-4 sm:px-6 lg:px-8">
-      <Helmet>
+      <Head>
         <title>{post.title.rendered} | ProEssayWorks Blog</title>
-        <meta name="description" content={`Read "${post.title.rendered}" on ProEssayWorks`} />
-      </Helmet>
+        <meta name="description" content={`Read "${post.title.rendered}" on ProEssayWorks.`} />
+      </Head>
 
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-12">
         {/* Main Content */}
         <div className="flex-1 min-w-0 bg-white rounded-2xl shadow p-4 md:p-8">
           {/* Back to Blog */}
           <div className="pt-8 flex items-center gap-4">
-            <Link to="/blog" className="text-indigo-600 hover:text-indigo-800 text-sm font-medium flex items-center">
+            <Link href="/blog" className="text-indigo-600 hover:text-indigo-800 text-sm font-medium flex items-center">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" />
               </svg>
@@ -63,10 +88,10 @@ const BlogPostPage = () => {
           </div>
 
           {/* Hero Image */}
-          {post.featured_media_url && (
+          {featuredImage && (
             <div className="h-64 md:h-96 w-full overflow-hidden mt-4 rounded-2xl">
               <img
-                src={post.featured_media_url}
+                src={featuredImage}
                 alt={post.title.rendered}
                 className="w-full h-full object-cover object-center"
               />
@@ -84,16 +109,14 @@ const BlogPostPage = () => {
               <span>{readTime} min read</span>
             </div>
 
-            {/* Blog Content (prose removed, custom readable styles added) */}
+            {/* Blog Content */}
             <article
-              className="max-w-none mb-12 text-gray-900 text-[1.05rem] leading-7 space-y-5"
+              className="max-w-none mb-12 text-gray-900 text-[1.05rem] leading-7 space-y-5 bg-white rounded-xl shadow p-6"
               style={{
-                color: '#111827',
-                fontSize: '1.05rem',
-                lineHeight: '1.75rem',
-                filter: 'none',
-                opacity: 1,
-                background: 'transparent',
+                color: '#1a202c', // Tailwind gray-900
+                background: 'white',
+                WebkitTextFillColor: '#1a202c',
+                msTextFillColor: '#1a202c',
               }}
               dangerouslySetInnerHTML={{ __html: cleanContent }}
             />
@@ -103,11 +126,12 @@ const BlogPostPage = () => {
               <h2 className="text-xl font-bold text-indigo-800 mb-2">Need help with your essay?</h2>
               <p className="text-gray-700 mb-4">
                 Get expert writing assistance from{' '}
-                <a href="https://proessayworks.com" className="text-indigo-700 font-semibold">ProEssayWorks</a>.
-                Our team is ready to help you succeed!
+                <a href="https://proessayworks.com" className="text-indigo-700 font-semibold">
+                  ProEssayWorks
+                </a>. Our team is ready to help you succeed!
               </p>
               <Link
-                to="/gethelp"
+                href="/gethelp"
                 className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-3 rounded-lg shadow transition-colors"
               >
                 Order Now
@@ -122,10 +146,10 @@ const BlogPostPage = () => {
             {/* Author Info */}
             <div className="flex items-center mb-6">
               <div className="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center text-xl font-bold text-indigo-700 mr-4 overflow-hidden">
-                {post.author?.name ? post.author.name[0] : 'A'}
+                {author ? author[0] : 'A'}
               </div>
               <div>
-                <p className="font-semibold text-gray-800">{post.author?.name || 'ProEssayWorks Team'}</p>
+                <p className="font-semibold text-gray-800">{author}</p>
                 <p className="text-xs text-gray-500">Author</p>
               </div>
             </div>
@@ -169,7 +193,7 @@ const BlogPostPage = () => {
             <div className="bg-indigo-50 border border-indigo-100 rounded-xl p-4 text-center">
               <h4 className="font-semibold text-indigo-800 mb-2">Need urgent help?</h4>
               <Link
-                to="/gethelp"
+                href="/gethelp"
                 className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-4 py-2 rounded-lg shadow transition-colors"
               >
                 Order Now
@@ -180,6 +204,4 @@ const BlogPostPage = () => {
       </div>
     </main>
   );
-};
-
-export default BlogPostPage;
+}

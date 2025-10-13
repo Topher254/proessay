@@ -41,13 +41,13 @@ const Navbar = () => {
     <>
       <nav className="sticky top-0 z-40 backdrop-blur-lg bg-white border-b border-gray-200 py-4 px-6 flex items-center justify-between transition-all duration-300">
         {/* Logo */}
-        <Link href="/" className="  hover:bg-indigo-50 transition-colors flex items-center">
+        <Link href="/" className="   transition-colors flex items-center">
           <Image
             src="/logo.png"
             alt="ProEssayWorks Logo"
             width={64}
             height={64}
-            className="w-28 h-10 object-contain"
+            className="w-32 h-10 object-contain"
             priority
           />
         </Link>

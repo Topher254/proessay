@@ -1,10 +1,10 @@
 import React from 'react';
-import { Helmet } from "react-helmet";
+import Head from "next/head";
 
 const CookieNoticePage = () => {
   return (
     <>
-      <Helmet>
+      <Head>
         <title>Cookie Notice | ProEssayWorks</title>
         <meta name="description" content="Read the ProEssayWorks Cookie Notice. Learn how we use cookies to enhance your experience on our essay writing and academic support website." />
         <meta name="keywords" content="privacy, cookies, plagiarism checker, cookie policy" />
@@ -12,16 +12,19 @@ const CookieNoticePage = () => {
         <meta property="og:description" content="Read the ProEssayWorks Cookie Notice. Learn how we use cookies to enhance your experience on our essay writing and academic support website." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://proessayworks.com/cookies" />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebPage',
-            'name': 'Cookie Notice',
-            'url': 'https://proessayworks.com/cookies',
-            'description': 'Read the ProEssayWorks Cookie Notice. Learn how we use cookies to enhance your experience on our essay writing and academic support website.'
-          })}
-        </script>
-      </Helmet>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebPage',
+              'name': 'Cookie Notice',
+              'url': 'https://proessayworks.com/cookies',
+              'description': 'Read the ProEssayWorks Cookie Notice. Learn how we use cookies to enhance your experience on our essay writing and academic support website.'
+            }),
+          }}
+        />
+      </Head>
       <div className="max-w-4xl mx-auto">
         <h1 className="text-3xl font-bold text-indigo-800 mb-6">Cookie Notice</h1>
         

@@ -157,7 +157,7 @@ export default function BlogPostPage() {
             {/* Meta Info */}
             <div className="mb-6 text-sm text-gray-500">
               <div>Published: {post.date ? new Date(post.date).toLocaleDateString() : ''}</div>
-              <div>Read time: {readTime} min</div>
+              <div>Read in: {readTime} min</div>
             </div>
 
             {/* Social Share Buttons */}

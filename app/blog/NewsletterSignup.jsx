@@ -1,15 +1,21 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const NewsletterSignup = () => {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // In a real app, you would send this to your backend
-    console.log('Subscribing email:', email);
-    setSubscribed(true);
-    setEmail('');
+    setLoading(true);
+    
+    // Simulate API call
+    setTimeout(() => {
+      console.log('Subscribing email:', email);
+      setSubscribed(true);
+      setEmail('');
+      setLoading(false);
+    }, 1000);
   };
 
   return (
@@ -20,9 +26,9 @@ const NewsletterSignup = () => {
       </p>
       
       {subscribed ? (
-        <div className="bg-green-50 text-green-700 p-4 rounded-lg max-w-md mx-auto">
+        <div className="bg-green-50 border border-green-200 text-green-700 p-4 rounded-lg max-w-md mx-auto">
           <p className="font-medium">Thank you for subscribing!</p>
-          <p>Check your email for our welcome message.</p>
+          <p className="text-sm">Check your email for our welcome message.</p>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
@@ -31,14 +37,27 @@ const NewsletterSignup = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
-            className="w-full px-4 py-2 rounded-md border border-gray-300 text-black placeholder:text-gray-500"
+            className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-900 placeholder-gray-500"
             required
+            disabled={loading}
           />
           <button
             type="submit"
-            className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-6 py-3 rounded-lg transition duration-300 whitespace-nowrap"
+            disabled={loading}
+            className={`font-medium px-6 py-3 rounded-lg transition duration-300 whitespace-nowrap ${
+              loading 
+                ? 'bg-gray-400 cursor-not-allowed text-white' 
+                : 'bg-indigo-600 hover:bg-indigo-700 text-white'
+            }`}
           >
-            Subscribe
+            {loading ? (
+              <div className="flex items-center">
+                <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                Subscribing...
+              </div>
+            ) : (
+              'Subscribe'
+            )}
           </button>
         </form>
       )}

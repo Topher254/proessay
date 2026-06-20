@@ -14,16 +14,16 @@ export default function Footer() {
           <div className="relative bg-indigo-600 p-10 w-full">
             {/* Columns */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-10 w-full">
-              {/* About ProEssayWorks */}
+              {/* About American Academic Consulting Group */}
               <div>
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-10 h-10 bg-indigo-500 rounded-full flex items-center justify-center shadow-lg">
                     <FaPencilAlt className="w-6 h-6 text-white" />
                   </div>
-                  <span className="text-xl font-extrabold text-white tracking-tight">ProEssayWorks</span>
+                  <span className="text-xl font-extrabold text-white tracking-tight">American Academic Consulting Group</span>
                 </div>
                 <p className="text-white text-sm mb-4">
-                  ProEssayWorks offers writing, editing, and rewriting help for academic assignments. Work with verified experts who deliver top-quality, original work.
+                  American Academic Consulting Group offers writing, editing, and rewriting help for academic assignments. Work with verified experts who deliver top-quality, original work.
                 </p>
                 <div className="flex gap-2">
                   <span className="text-xs text-white">Remote-first academic solutions</span>
@@ -115,7 +115,7 @@ export default function Footer() {
             {/* Copyright & Credits */}
             <div className="flex flex-col md:flex-row items-center justify-between gap-4 w-full">
               <p className="text-white text-sm">
-                &copy; 2025 <span className="font-semibold text-white">proessayworks.com</span> &mdash; All rights reserved
+                &copy; 2025 <span className="font-semibold text-white">American Academic Consulting Group.com</span> &mdash; All rights reserved
               </p>
               <div className="flex items-center gap-2 text-xs text-white">
                 <span>Designed by</span>

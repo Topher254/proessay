@@ -8,7 +8,7 @@ import BlogCategoryFilter from './BlogCategoryFilter';
 import NewsletterSignup from './NewsletterSignup';
 import FeaturedPost from './FeaturedPost';
 
-const WP_API = 'https://proessayworks.com/myblog/wp-json/wp/v2/posts';
+const WP_API = 'https://American Academic Consulting Group.com/myblog/wp-json/wp/v2/posts';
 
 const BlogHomePage = () => {
   const [posts, setPosts] = useState([]);
@@ -43,7 +43,7 @@ const BlogHomePage = () => {
             if (post.featured_media) {
               try {
                 const mediaRes = await fetch(
-                  `https://proessayworks.com/myblog/wp-json/wp/v2/media/${post.featured_media}`
+                  `https://American Academic Consulting Group.com/myblog/wp-json/wp/v2/media/${post.featured_media}`
                 );
                 if (mediaRes.ok) {
                   const mediaData = await mediaRes.json();
@@ -62,7 +62,7 @@ const BlogHomePage = () => {
               excerpt: post.excerpt.rendered.replace(/<[^>]+>/g, '').substring(0, 150) + '...',
               mainImage: { asset: { url: imageUrl } },
               category: post.categories?.[0] || 'general',
-              author: post._embedded?.author?.[0]?.name || 'ProEssayWorks Team'
+              author: post._embedded?.author?.[0]?.name || 'American Academic Consulting Group Team'
             };
           })
         );
@@ -146,7 +146,7 @@ const BlogHomePage = () => {
         <meta property="og:title" content="Academic Insights Blog | Essay Writing Tips & Research Help" />
         <meta property="og:description" content="Expert essay writing tips, research strategies, and academic advice to help students excel. Explore our blog for the latest in academic writing and study skills." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://proessayworks.com/blog" />
+        <meta property="og:url" content="https://American Academic Consulting Group.com/blog" />
         <meta name="keywords" content="writing tips, research paper writing, dissertation proposal writing service, pay for thesis, argumentative essay writing service, expository essay writing service, analytical essay writing service, essay for sale" />
       </Head>
       

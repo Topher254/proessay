@@ -27,7 +27,7 @@ const writers = [
 			text: 'Cole delivered a brilliant analysis of postmodern literature that exceeded all my expectations. The depth of insight was remarkable.',
 		},
 		image: '/cole.jpg',
-		email: 'cole.raphael@proessayworks.com',
+		email: 'cole.raphael@American Academic Consulting Group.com',
 		whatsapp: '+19149016306',
 	},
 	{
@@ -45,7 +45,7 @@ const writers = [
 			text: "Whitney's research on genetic markers was comprehensive and perfectly formatted. I received an A+ on my thesis proposal.",
 		},
 		image: '/gabriel.jpg',
-		email: 'gabriel.whitney@proessayworks.com',
+		email: 'gabriel.whitney@American Academic Consulting Group.com',
 		whatsapp: '+12068553599',
 	},
 	{
@@ -67,7 +67,7 @@ const writers = [
 			text: 'Victor crafted a flawless financial analysis that impressed my professor. His attention to detail is exceptional.',
 		},
 		image: '/victor.jpg',
-		email: 'darwin.victor@proessayworks.com',
+		email: 'darwin.victor@American Academic Consulting Group.com',
 		whatsapp: '+19852873428',
 	},
 	{
@@ -89,7 +89,7 @@ const writers = [
 			text: 'Elvis explained complex quantum concepts with remarkable clarity. My paper was praised for its originality and depth.',
 		},
 		image: '/elvis.jpg',
-		email: 'elvis.ruben@proessayworks.com',
+		email: 'elvis.ruben@American Academic Consulting Group.com',
 		whatsapp: '+254702304046',
 	},
 	{
@@ -111,7 +111,7 @@ const writers = [
 			text: "Sophia's historical analysis was both insightful and engaging. She transformed a dry topic into a fascinating narrative.",
 		},
 		image: '/sophia.jpg',
-		email: 'sophia.chen@proessayworks.com',
+		email: 'sophia.chen@American Academic Consulting Group.com',
 		whatsapp: '+254796871876',
 	},
 	{
@@ -133,7 +133,7 @@ const writers = [
 			text: 'Marcus crafted a compelling legal argument that was both persuasive and impeccably researched. Highly recommended!',
 		},
 		image: '/marcus.jpg',
-		email: 'marcus.johnson@proessayworks.com',
+		email: 'marcus.johnson@American Academic Consulting Group.com',
 		whatsapp: '+19149016306',
 	},
 ];
@@ -202,7 +202,7 @@ const Writers = () => {
 							<div className="flex items-center mb-6">
 								<Image
 									src={writer.image}
-									alt={`${writer.name} - ProEssayWorks academic writer profile photo`}
+									alt={`${writer.name} - American Academic Consulting Group academic writer profile photo`}
 									width={64}
 									height={64}
 									className="w-16 h-16 rounded-full object-cover border-2 border-gray-200"
@@ -422,7 +422,7 @@ const Writers = () => {
 						>
 							<Image
 								src={writer.image}
-								alt={`${writer.name} - ProEssayWorks academic writer thumbnail`}
+								alt={`${writer.name} - American Academic Consulting Group academic writer thumbnail`}
 								width={48}
 								height={48}
 								className="w-12 h-12 rounded-full object-cover border-2 border-dashed border-gray-300 mb-2"
@@ -464,7 +464,7 @@ const Writers = () => {
 							<div className="flex items-center gap-4 mb-4">
 								<Image
 									src={writer.image}
-									alt={`${writer.name} - ProEssayWorks academic writer profile photo`}
+									alt={`${writer.name} - American Academic Consulting Group academic writer profile photo`}
 									width={64}
 									height={64}
 									className="w-16 h-16 rounded-full object-cover"

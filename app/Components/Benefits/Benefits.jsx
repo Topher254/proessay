@@ -11,7 +11,7 @@ export default function Benefits() {
     navigate("/gethelp"); // Navigate to /gethelp route
   };
   return (
-    <section className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-50 p-8" aria-label="Benefits of ProEssayWorks">
+    <section className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-50 p-8" aria-label="Benefits of American Academic Consulting Group">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <header className="text-center mb-12">

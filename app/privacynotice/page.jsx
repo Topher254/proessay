@@ -6,12 +6,12 @@ const PrivacyNoticePage = () => {
   return (
     <>
       <Head>
-        <title>Privacy Notice | ProEssayWorks</title>
-        <meta name="description" content="Read the ProEssayWorks Privacy Notice. Learn how we protect your personal data and privacy when you use our essay writing and academic services." />
-        <meta property="og:title" content="Privacy Notice | ProEssayWorks" />
-        <meta property="og:description" content="Read the ProEssayWorks Privacy Notice. Learn how we protect your personal data and privacy when you use our essay writing and academic services." />
+        <title>Privacy Notice | American Academic Consulting Group</title>
+        <meta name="description" content="Read the American Academic Consulting Group Privacy Notice. Learn how we protect your personal data and privacy when you use our essay writing and academic services." />
+        <meta property="og:title" content="Privacy Notice | American Academic Consulting Group" />
+        <meta property="og:description" content="Read the American Academic Consulting Group Privacy Notice. Learn how we protect your personal data and privacy when you use our essay writing and academic services." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://proessayworks.com/privacy" />
+        <meta property="og:url" content="https://American Academic Consulting Group.com/privacy" />
         <meta name="keywords" content="privacy, data protection, plagiarism checker, personal information" />
         <script
           type="application/ld+json"
@@ -20,8 +20,8 @@ const PrivacyNoticePage = () => {
               '@context': 'https://schema.org',
               '@type': 'PrivacyPolicy',
               'name': 'Privacy Notice',
-              'url': 'https://proessayworks.com/privacy',
-              'description': 'Read the ProEssayWorks Privacy Notice. Learn how we protect your personal data and privacy when you use our essay writing and academic services.'
+              'url': 'https://American Academic Consulting Group.com/privacy',
+              'description': 'Read the American Academic Consulting Group Privacy Notice. Learn how we protect your personal data and privacy when you use our essay writing and academic services.'
             }),
           }}
         />

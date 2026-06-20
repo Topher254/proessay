@@ -12,7 +12,7 @@ const ContactPage = () => {
   const handleSend = (e) => {
     e.preventDefault();
 
-    const mailtoLink = `mailto:admin@proessayWorks.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+    const mailtoLink = `mailto:americanacademicconsulting@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
     )}`;
 
@@ -22,26 +22,26 @@ const ContactPage = () => {
   return (
     <>
       <Head>
-        <title>Contact ProEssayWorks | Essay Writing Help</title>
-        <meta name="description" content="Contact ProEssayWorks for expert essay writing, editing, and academic support. Reach us by email, phone, or WhatsApp for fast, friendly help." />
+        <title>Contact American Academic Consulting Group | Essay Writing Help</title>
+        <meta name="description" content="Contact American Academic Consulting Group for expert essay writing, editing, and academic support. Reach us by email, phone, or WhatsApp for fast, friendly help." />
         <meta name="keywords" content="essay writing help, urgent homework, support, do my assignment, do my coursework, contact" />
-        <meta property="og:title" content="Contact ProEssayWorks | Essay Writing Help" />
-        <meta property="og:description" content="Contact ProEssayWorks for expert essay writing, editing, and academic support. Reach us by email, phone, or WhatsApp for fast, friendly help." />
+        <meta property="og:title" content="Contact American Academic Consulting Group | Essay Writing Help" />
+        <meta property="og:description" content="Contact American Academic Consulting Group for expert essay writing, editing, and academic support. Reach us by email, phone, or WhatsApp for fast, friendly help." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://proessayworks.com/contact" />
+        <meta property="og:url" content="https://American Academic Consulting Group.com/contact" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'ContactPage',
-              'url': 'https://proessayworks.com/contact',
+              'url': 'https://American Academic Consulting Group.com/contact',
               'contactOption': [
-                'https://proessayworks.com/',
-                'mailto:admin@proessayWorks.com',
-                'tel:+19149016306'
+                'https://American Academic Consulting Group.com/',
+                'mailto:americanacademicconsulting@gmail.com',
+                'tel:+254 796 871876'
               ],
-              'description': 'Contact ProEssayWorks for expert essay writing, editing, and academic support.'
+              'description': 'Contact American Academic Consulting Group for expert essay writing, editing, and academic support.'
             }),
           }}
         />
@@ -54,11 +54,11 @@ const ContactPage = () => {
             <div className="space-y-6 text-lg">
               <div>
                 <span className="font-semibold text-indigo-700">Email:</span>
-                <p className="text-gray-800">admin@proessayWorks.com</p>
+                <p className="text-gray-800">americanacademicconsulting@gmail.com</p>
               </div>
               <div>
                 <span className="font-semibold text-indigo-700">Phone / WhatsApp:</span>
-                <p className="text-gray-800">+1 (914) 901-6306</p>
+                <p className="text-gray-800">+254 796 871876</p>
               </div>
               <div>
                 <span className="font-semibold text-indigo-700">Hours:</span>

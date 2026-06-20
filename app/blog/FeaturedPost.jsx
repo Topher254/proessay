@@ -43,7 +43,7 @@ const FeaturedPost = ({ post, onClick, isClicked }) => {
                 {post.author ? post.author.charAt(0) : 'P'}
               </div>
               <div>
-                <p className="text-sm font-medium text-gray-900">ProEssayWorks Team</p>
+                <p className="text-sm font-medium text-gray-900">American Academic Consulting Group Team</p>
                 <p className="text-sm text-gray-500">Expert Writers</p>
               </div>
             </div>

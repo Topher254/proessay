@@ -6,13 +6,13 @@ const EthicsCodePage = () => {
   return (
     <>
       <Head>
-        <title>Academic Ethics Code | ProEssayWorks</title>
-        <meta name="description" content="Read the ProEssayWorks Ethics Code. We uphold academic integrity and ethical standards in all our essay writing and academic support services." />
+        <title>Academic Ethics Code | American Academic Consulting Group</title>
+        <meta name="description" content="Read the American Academic Consulting Group Ethics Code. We uphold academic integrity and ethical standards in all our essay writing and academic support services." />
         <meta name="keywords" content="academic integrity, ethics, plagiarism checker, writing policy" />
-        <meta property="og:title" content="Academic Ethics Code | ProEssayWorks" />
-        <meta property="og:description" content="Read the ProEssayWorks Ethics Code. We uphold academic integrity and ethical standards in all our essay writing and academic support services." />
+        <meta property="og:title" content="Academic Ethics Code | American Academic Consulting Group" />
+        <meta property="og:description" content="Read the American Academic Consulting Group Ethics Code. We uphold academic integrity and ethical standards in all our essay writing and academic support services." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://proessayworks.com/ethics" />
+        <meta property="og:url" content="https://American Academic Consulting Group.com/ethics" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -20,8 +20,8 @@ const EthicsCodePage = () => {
               '@context': 'https://schema.org',
               '@type': 'WebPage',
               'name': 'Academic Ethics Code',
-              'url': 'https://proessayworks.com/ethics',
-              'description': 'Read the ProEssayWorks Ethics Code. We uphold academic integrity and ethical standards in all our essay writing and academic support services.'
+              'url': 'https://American Academic Consulting Group.com/ethics',
+              'description': 'Read the American Academic Consulting Group Ethics Code. We uphold academic integrity and ethical standards in all our essay writing and academic support services.'
             }),
           }}
         />
@@ -39,7 +39,7 @@ const EthicsCodePage = () => {
             <div>
               <h2 className="text-xl text-black font-semibold mb-2">Our Commitment</h2>
               <p className="text-gray-700">
-                At ProEssayWorks, we uphold the highest ethical standards in academic support. 
+                At American Academic Consulting Group, we uphold the highest ethical standards in academic support. 
                 We are committed to promoting learning while maintaining academic integrity.
               </p>
             </div>

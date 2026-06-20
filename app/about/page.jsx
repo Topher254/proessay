@@ -15,12 +15,12 @@ export default function Page() {
   return (
     <>
       <Head>
-        <title>About ProEssayWorks | Academic Essay Writing Experts</title>
-        <meta name="description" content="Learn about ProEssayWorks, your trusted partner for essay writing, editing, and academic help. Meet our expert team and discover our mission to help students succeed." />
-        <meta property="og:title" content="About ProEssayWorks | Academic Essay Writing Experts" />
-        <meta property="og:description" content="Learn about ProEssayWorks, your trusted partner for essay writing, editing, and academic help. Meet our expert team and discover our mission to help students succeed." />
+        <title>About American Academic Consulting Group | Academic Essay Writing Experts</title>
+        <meta name="description" content="Learn about American Academic Consulting Group, your trusted partner for essay writing, editing, and academic help. Meet our expert team and discover our mission to help students succeed." />
+        <meta property="og:title" content="About American Academic Consulting Group | Academic Essay Writing Experts" />
+        <meta property="og:description" content="Learn about American Academic Consulting Group, your trusted partner for essay writing, editing, and academic help. Meet our expert team and discover our mission to help students succeed." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://proessayworks.com/about" />
+        <meta property="og:url" content="https://American Academic Consulting Group.com/about" />
         <meta name="keywords" content="essay writers, personal statement writing service, rewrite my essay, scholarship essay writing service, speech writing services, edit my essay, literature review writing service, admission essay writing service, analytical essay writing service, college essay writing" />
         <script
           type="application/ld+json"
@@ -28,10 +28,10 @@ export default function Page() {
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Organization',
-              'name': 'ProEssayWorks',
-              'url': 'https://proessayworks.com/',
-              'logo': 'https://proessayworks.com/logo.png',
-              'description': 'ProEssayWorks offers writing, editing, and rewriting help for academic assignments.'
+              'name': 'American Academic Consulting Group',
+              'url': 'https://American Academic Consulting Group.com/',
+              'logo': 'https://American Academic Consulting Group.com/logo.png',
+              'description': 'American Academic Consulting Group offers writing, editing, and rewriting help for academic assignments.'
             }),
           }}
         />
@@ -43,10 +43,10 @@ export default function Page() {
             {/* Left Content */}
             <div className="flex-1 max-w-xl">
               <h1 className="text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
-                <span className="text-indigo-600">ProEssayWorks</span> — Your Academic Success Partner
+                <span className="text-indigo-600">American Academic Consulting Group</span> — Your Academic Success Partner
               </h1>
               <p className="text-gray-700 text-lg mb-8 leading-relaxed">
-                Struggling with deadlines? Need expert help to ace your assignments? ProEssayWorks connects you with top academic writers, editors, and proofreaders who deliver excellence—every time. Join thousands of students who trust us for fast, reliable, and confidential support.
+                Struggling with deadlines? Need expert help to ace your assignments? American Academic Consulting Group connects you with top academic writers, editors, and proofreaders who deliver excellence—every time. Join thousands of students who trust us for fast, reliable, and confidential support.
               </p>
               <button 
                 onClick={handleGetHelp}
@@ -72,7 +72,7 @@ export default function Page() {
               <div className="relative rounded-3xl overflow-hidden shadow-2xl min-h-[400px] w-full flex items-center justify-center bg-white">
                 <Image
                   src="/writers-hero.png"
-                  alt="ProEssayWorks team helping students"
+                  alt="American Academic Consulting Group team helping students"
                   fill
                   className="object-cover"
                   priority

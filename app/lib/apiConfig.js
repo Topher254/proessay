@@ -2,9 +2,9 @@ let API_BASE;
 
 if (typeof window !== "undefined") {
   API_BASE =
-    window.location.hostname === 'proessayworks.com' ||
-    window.location.hostname === 'www.proessayworks.com'
-      ? 'https://api.proessayworks.com'
+    window.location.hostname === 'American Academic Consulting Group.com' ||
+    window.location.hostname === 'www.American Academic Consulting Group.com'
+      ? 'https://api.American Academic Consulting Group.com'
       : 'http://localhost:5000';
 } else {
   // Use environment variable or default for server-side

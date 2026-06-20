@@ -6,12 +6,12 @@ const ServiceAgreementPage = () => {
   return (
     <>
       <Head>
-        <title>Service Agreement | ProEssayWorks</title>
-        <meta name="description" content="Read the ProEssayWorks Service Agreement. Understand the terms and conditions for using our essay writing and academic support services." />
-        <meta property="og:title" content="Service Agreement | ProEssayWorks" />
-        <meta property="og:description" content="Read the ProEssayWorks Service Agreement. Understand the terms and conditions for using our essay writing and academic support services." />
+        <title>Service Agreement | American Academic Consulting Group</title>
+        <meta name="description" content="Read the American Academic Consulting Group Service Agreement. Understand the terms and conditions for using our essay writing and academic support services." />
+        <meta property="og:title" content="Service Agreement | American Academic Consulting Group" />
+        <meta property="og:description" content="Read the American Academic Consulting Group Service Agreement. Understand the terms and conditions for using our essay writing and academic support services." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://proessayworks.com/service-agreement" />
+        <meta property="og:url" content="https://American Academic Consulting Group.com/service-agreement" />
         <meta name="keywords" content="service agreement, terms, conditions, refund, money back" />
         <script
           type="application/ld+json"
@@ -20,8 +20,8 @@ const ServiceAgreementPage = () => {
               '@context': 'https://schema.org',
               '@type': 'WebPage',
               'name': 'Service Agreement',
-              'url': 'https://proessayworks.com/service-agreement',
-              'description': 'Read the ProEssayWorks Service Agreement. Understand the terms and conditions for using our essay writing and academic support services.'
+              'url': 'https://American Academic Consulting Group.com/service-agreement',
+              'description': 'Read the American Academic Consulting Group Service Agreement. Understand the terms and conditions for using our essay writing and academic support services.'
             }),
           }}
         />
@@ -35,15 +35,15 @@ const ServiceAgreementPage = () => {
           <section className="mb-8">
             <h2 className="text-xl font-semibold mb-3">1. Acceptance of Terms</h2>
             <p>
-              By using ProEssayWorks services, you agree to be bound by these Terms of Service. 
-              This agreement constitutes a legally binding contract between you and ProEssayWorks.
+              By using American Academic Consulting Group services, you agree to be bound by these Terms of Service. 
+              This agreement constitutes a legally binding contract between you and American Academic Consulting Group.
             </p>
           </section>
           
           <section className="mb-8">
             <h2 className="text-xl font-semibold mb-3">2. Services Provided</h2>
             <p>
-              ProEssayWorks provides custom academic writing services including but not limited to:
+              American Academic Consulting Group provides custom academic writing services including but not limited to:
             </p>
             <ul className="list-disc pl-5">
               <li>Essay writing</li>
@@ -58,7 +58,7 @@ const ServiceAgreementPage = () => {
             <h2 className="text-xl font-semibold mb-3">3. User Responsibilities</h2>
             <p>
               Users agree to provide accurate and complete information when placing orders. 
-              ProEssayWorks services are for research and reference purposes only. 
+              American Academic Consulting Group services are for research and reference purposes only. 
               Users are solely responsible for how they utilize the materials provided.
             </p>
           </section>
@@ -83,7 +83,7 @@ const ServiceAgreementPage = () => {
           <section className="mb-8">
             <h2 className="text-xl font-semibold mb-3">6. Copyright</h2>
             <p>
-              All original work remains the property of ProEssayWorks until full payment is received. 
+              All original work remains the property of American Academic Consulting Group until full payment is received. 
               Upon complete payment, users receive a non-exclusive license to use the material.
             </p>
           </section>

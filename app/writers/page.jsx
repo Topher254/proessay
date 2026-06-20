@@ -21,7 +21,7 @@ const writers = [
       text: "Cole delivered a brilliant analysis of postmodern literature that exceeded all my expectations. The depth of insight was remarkable."
     },
     image: "/cole.jpg",
-    email: "cole.raphael@proessayworks.com",
+    email: "cole.raphael@American Academic Consulting Group.com",
     whatsapp: "+19149016306"
   },
   {
@@ -39,7 +39,7 @@ const writers = [
       text: "Whitney's research on genetic markers was comprehensive and perfectly formatted. I received an A+ on my thesis proposal."
     },
     image: "/gabriel.jpg",
-    email: "gabriel.whitney@proessayworks.com",
+    email: "gabriel.whitney@American Academic Consulting Group.com",
     whatsapp: "+12068553599"
   },
   {
@@ -57,7 +57,7 @@ const writers = [
       text: "Victor crafted a flawless financial analysis that impressed my professor. His attention to detail is exceptional."
     },
     image: "/victor.jpg",
-    email: "darwin.victor@proessayworks.com",
+    email: "darwin.victor@American Academic Consulting Group.com",
     whatsapp: "+19852873428"
   },
   {
@@ -75,7 +75,7 @@ const writers = [
       text: "Elvis explained complex quantum concepts with remarkable clarity. My paper was praised for its originality and depth."
     },
     image: "/elvis.jpg",
-    email: "elvis.ruben@proessayworks.com",
+    email: "elvis.ruben@American Academic Consulting Group.com",
     whatsapp: "+254702304046"
   },
   {
@@ -93,7 +93,7 @@ const writers = [
       text: "Sophia's historical analysis was both insightful and engaging. She transformed a dry topic into a fascinating narrative."
     },
     image: "/sophia.jpg",
-    email: "sophia.chen@proessayworks.com",
+    email: "sophia.chen@American Academic Consulting Group.com",
     whatsapp: "+254796871876"
   },
   {
@@ -111,7 +111,7 @@ const writers = [
       text: "Marcus crafted a compelling legal argument that was both persuasive and impeccably researched. Highly recommended!"
     },
     image: "/marcus.jpg",
-    email: "marcus.johnson@proessayworks.com",
+    email: "marcus.johnson@American Academic Consulting Group.com",
     whatsapp: "+19149016306"
   }
 ];
@@ -137,12 +137,12 @@ export default function WritersPage() {
   return (
     <>
       <Head>
-        <title>Our Writers | ProEssayWorks Academic Experts</title>
-        <meta name="description" content="Meet the top essay writers at ProEssayWorks. Our academic experts are ready to help you with any assignment, ensuring quality and originality every time." />
-        <meta property="og:title" content="Our Writers | ProEssayWorks Academic Experts" />
-        <meta property="og:description" content="Meet the top essay writers at ProEssayWorks. Our academic experts are ready to help you with any assignment, ensuring quality and originality every time." />
+        <title>Our Writers | American Academic Consulting Group Academic Experts</title>
+        <meta name="description" content="Meet the top essay writers at American Academic Consulting Group. Our academic experts are ready to help you with any assignment, ensuring quality and originality every time." />
+        <meta property="og:title" content="Our Writers | American Academic Consulting Group Academic Experts" />
+        <meta property="og:description" content="Meet the top essay writers at American Academic Consulting Group. Our academic experts are ready to help you with any assignment, ensuring quality and originality every time." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://proessayworks.com/writers" />
+        <meta property="og:url" content="https://American Academic Consulting Group.com/writers" />
         <meta name="keywords" content="essay writers, professional writers, writing team, scholarship essay writing service, argumentative essay writing service, college essay writing" />
         <script
           type="application/ld+json"
@@ -150,10 +150,10 @@ export default function WritersPage() {
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Organization',
-              'name': 'ProEssayWorks',
-              'url': 'https://proessayworks.com/',
-              'logo': 'https://proessayworks.com/logo.png',
-              'description': 'Meet the top essay writers at ProEssayWorks. Our academic experts are ready to help you with any assignment.'
+              'name': 'American Academic Consulting Group',
+              'url': 'https://American Academic Consulting Group.com/',
+              'logo': 'https://American Academic Consulting Group.com/logo.png',
+              'description': 'Meet the top essay writers at American Academic Consulting Group. Our academic experts are ready to help you with any assignment.'
             }),
           }}
         />
@@ -224,7 +224,7 @@ export default function WritersPage() {
                   <div className="relative">
                     <Image
                       src={writer.image}
-                      alt={`${writer.name} - ProEssayWorks academic writer profile photo`}
+                      alt={`${writer.name} - American Academic Consulting Group academic writer profile photo`}
                       width={80}
                       height={80}
                       className="w-20 h-20 object-cover rounded-full"
@@ -310,7 +310,7 @@ export default function WritersPage() {
                 <div className="flex items-center gap-4 mb-4">
                   <Image
                     src={selectedWriter.image}
-                    alt={`${selectedWriter.name} - ProEssayWorks academic writer profile photo`}
+                    alt={`${selectedWriter.name} - American Academic Consulting Group academic writer profile photo`}
                     width={64}
                     height={64}
                     className="w-16 h-16 rounded-full object-cover"

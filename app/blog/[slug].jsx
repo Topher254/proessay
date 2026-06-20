@@ -3,9 +3,40 @@
 import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Head from 'next/head';
-import { FaFacebook, FaTwitter, FaLinkedin, FaArrowLeft } from 'react-icons/fa';
+import { FaArrowLeft, FaFacebook, FaTwitter, FaLinkedin } from 'react-icons/fa';
 
-const WP_API = 'https://proessayworks.com/myblog/wp-json/wp/v2/posts';
+const WP_API = 'https://American Academic Consulting Group.com/myblog/wp-json/wp/v2/posts';
+
+// This function is required for static export with dynamic routes
+export async function generateStaticParams() {
+  try {
+    console.log('Generating static params for blog posts...');
+    
+    const res = await fetch(`${WP_API}?per_page=20&_embed=1`);
+    
+    if (!res.ok) {
+      console.error('Failed to fetch posts for static generation');
+      return [];
+    }
+    
+    const posts = await res.json();
+    
+    if (!posts || posts.length === 0) {
+      console.log('No posts found for static generation');
+      return [];
+    }
+
+    const params = posts.map((post) => ({
+      slug: post.slug,
+    }));
+
+    console.log(`Generated ${params.length} static paths`);
+    return params;
+  } catch (error) {
+    console.error('Error generating static params:', error);
+    return [];
+  }
+}
 
 function estimateReadTime(text) {
   const words = text ? text.split(/\s+/).length : 0;
@@ -15,32 +46,52 @@ function estimateReadTime(text) {
 export default function BlogPostPage() {
   const params = useParams();
   const slug = params?.slug;
-  const router = useRouter();
-  
   const [post, setPost] = useState(null);
   const [cleanContent, setCleanContent] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const router = useRouter();
 
   useEffect(() => {
-    if (!slug) return;
+    if (!slug) {
+      console.log('No slug parameter found');
+      setError('No slug parameter provided');
+      setLoading(false);
+      return;
+    }
+
+    console.log('Fetching post for slug:', slug);
 
     const fetchPost = async () => {
       try {
         setLoading(true);
         setError(null);
         
-        const res = await fetch(`${WP_API}?slug=${slug}&_embed=1`);
+        const apiUrl = `${WP_API}?slug=${slug}&_embed=1`;
+        console.log('Fetching from:', apiUrl);
+        
+        const res = await fetch(apiUrl);
+        
+        console.log('Response status:', res.status, res.statusText);
         
         if (!res.ok) {
-          throw new Error(`Failed to fetch post: ${res.status}`);
+          throw new Error(`HTTP ${res.status}: ${res.statusText}`);
         }
         
         const data = await res.json();
+        console.log('API response data:', data);
+
+        if (!data || data.length === 0) {
+          throw new Error('No post found with this slug');
+        }
 
         if (data && data.length > 0) {
           const p = data[0];
+          console.log('Post found:', p.title?.rendered);
+          console.log('Post content available:', !!p.content?.rendered);
+          
           let content = p.content?.rendered || '';
+          console.log('Content length:', content.length);
 
           // Enhanced content cleaning
           const cleaned = content
@@ -54,14 +105,13 @@ export default function BlogPostPage() {
             .replace(/style="[^"]*"/gi, '')
             .replace(/class="[^"]*"/gi, '');
 
+          console.log('Content cleaned successfully');
           setPost(p);
           setCleanContent(cleaned);
-        } else {
-          setError('Post not found');
         }
       } catch (err) {
         console.error('Failed to load post:', err);
-        setError(err.message || 'Failed to load post');
+        setError(err.message || 'Failed to load post. Please check if the WordPress API is accessible.');
       } finally {
         setLoading(false);
       }
@@ -75,8 +125,9 @@ export default function BlogPostPage() {
     return (
       <div className="min-h-screen bg-gradient-to-b from-indigo-50 to-white flex justify-center items-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Loading article...</p>
+          <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-indigo-600 mx-auto mb-4"></div>
+          <p className="text-gray-600 text-lg">Loading article...</p>
+          <p className="text-gray-500 text-sm mt-2">Fetching: {slug}</p>
         </div>
       </div>
     );
@@ -86,16 +137,31 @@ export default function BlogPostPage() {
   if (error) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-indigo-50 to-white flex justify-center items-center">
-        <div className="text-center max-w-md mx-auto">
+        <div className="text-center max-w-md mx-auto p-6">
           <div className="text-red-500 text-6xl mb-4">⚠️</div>
           <h2 className="text-2xl font-bold text-gray-900 mb-2">Unable to Load Post</h2>
-          <p className="text-gray-600 mb-6">{error}</p>
-          <button
-            onClick={() => router.push('/blog')}
-            className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
-          >
-            Back to Blog
-          </button>
+          <p className="text-gray-600 mb-4">{error}</p>
+          <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6 text-left">
+            <p className="text-sm text-yellow-800">
+              <strong>Debug Info:</strong><br />
+              Slug: {slug}<br />
+              API: {WP_API}
+            </p>
+          </div>
+          <div className="flex gap-3 justify-center">
+            <button
+              onClick={() => window.location.reload()}
+              className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+            >
+              Try Again
+            </button>
+            <button
+              onClick={() => router.push('/blog')}
+              className="bg-gray-600 hover:bg-gray-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+            >
+              Back to Blog
+            </button>
+          </div>
         </div>
       </div>
     );
@@ -106,6 +172,7 @@ export default function BlogPostPage() {
       <div className="min-h-screen bg-gradient-to-b from-indigo-50 to-white flex justify-center items-center">
         <div className="text-center">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Post Not Found</h2>
+          <p className="text-gray-600 mb-6">The article you're looking for doesn't exist.</p>
           <button
             onClick={() => router.push('/blog')}
             className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
@@ -123,14 +190,15 @@ export default function BlogPostPage() {
   const shareUrl = typeof window !== 'undefined' ? window.location.href : '';
   const shareText = encodeURIComponent(post.title?.rendered || '');
 
-  // Featured image
+  // Featured image - using _embedded data
   const featuredImage =
     post._embedded?.['wp:featuredmedia']?.[0]?.source_url ||
+    post._embedded?.['wp:featuredmedia']?.[0]?.media_details?.sizes?.full?.source_url ||
     '/default-blog.jpg';
 
   // Author name
   const author =
-    post._embedded?.author?.[0]?.name || 'ProEssayWorks Team';
+    post._embedded?.author?.[0]?.name || 'American Academic Consulting Group Team';
 
   // Format date
   const formatDate = (dateString) => {
@@ -144,10 +212,10 @@ export default function BlogPostPage() {
   return (
     <>
       <Head>
-        <title>{post.title.rendered} | ProEssayWorks Blog</title>
+        <title>{post.title.rendered} | American Academic Consulting Group Blog</title>
         <meta 
           name="description" 
-          content={post.excerpt?.rendered?.replace(/<[^>]+>/g, '').substring(0, 160) || `Read "${post.title.rendered}" on ProEssayWorks.`} 
+          content={post.excerpt?.rendered?.replace(/<[^>]+>/g, '').substring(0, 160) || `Read "${post.title.rendered}" on American Academic Consulting Group.`} 
         />
         <meta property="og:title" content={post.title.rendered} />
         <meta property="og:description" content={post.excerpt?.rendered?.replace(/<[^>]+>/g, '').substring(0, 160) || ''} />
@@ -179,6 +247,7 @@ export default function BlogPostPage() {
                   alt={post.title.rendered}
                   className="w-full h-64 sm:h-80 lg:h-96 object-cover object-center"
                   onError={(e) => {
+                    console.log('Image failed to load, using fallback');
                     e.target.src = '/default-blog.jpg';
                   }}
                 />
@@ -224,7 +293,7 @@ export default function BlogPostPage() {
                     fontSize: '1.125rem',
                     lineHeight: '1.75'
                   }}
-                  dangerouslySetInnerHTML={{ __html: cleanContent }}
+                  dangerouslySetInnerHTML={{ __html: cleanContent || '<p>No content available.</p>' }}
                 />
               </article>
 
@@ -268,7 +337,7 @@ export default function BlogPostPage() {
               <div className="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl p-8 text-center text-white">
                 <h2 className="text-2xl font-bold mb-3">Need help with your essay?</h2>
                 <p className="text-indigo-100 mb-6 text-lg">
-                  Get expert writing assistance from ProEssayWorks. Our team is ready to help you succeed!
+                  Get expert writing assistance from American Academic Consulting Group. Our team is ready to help you succeed!
                 </p>
                 <button
                   onClick={() => router.push('/gethelp')}
@@ -295,7 +364,7 @@ export default function BlogPostPage() {
                   </div>
                 </div>
                 <p className="text-gray-700 text-sm">
-                  Expert writer at ProEssayWorks, dedicated to helping students achieve academic success through quality writing.
+                  Expert writer at American Academic Consulting Group, dedicated to helping students achieve academic success through quality writing.
                 </p>
               </div>
 

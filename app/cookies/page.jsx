@@ -5,13 +5,13 @@ const CookieNoticePage = () => {
   return (
     <>
       <Head>
-        <title>Cookie Notice | ProEssayWorks</title>
-        <meta name="description" content="Read the ProEssayWorks Cookie Notice. Learn how we use cookies to enhance your experience on our essay writing and academic support website." />
+        <title>Cookie Notice | American Academic Consulting Group</title>
+        <meta name="description" content="Read the American Academic Consulting Group Cookie Notice. Learn how we use cookies to enhance your experience on our essay writing and academic support website." />
         <meta name="keywords" content="privacy, cookies, plagiarism checker, cookie policy" />
-        <meta property="og:title" content="Cookie Notice | ProEssayWorks" />
-        <meta property="og:description" content="Read the ProEssayWorks Cookie Notice. Learn how we use cookies to enhance your experience on our essay writing and academic support website." />
+        <meta property="og:title" content="Cookie Notice | American Academic Consulting Group" />
+        <meta property="og:description" content="Read the American Academic Consulting Group Cookie Notice. Learn how we use cookies to enhance your experience on our essay writing and academic support website." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://proessayworks.com/cookies" />
+        <meta property="og:url" content="https://American Academic Consulting Group.com/cookies" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -19,8 +19,8 @@ const CookieNoticePage = () => {
               '@context': 'https://schema.org',
               '@type': 'WebPage',
               'name': 'Cookie Notice',
-              'url': 'https://proessayworks.com/cookies',
-              'description': 'Read the ProEssayWorks Cookie Notice. Learn how we use cookies to enhance your experience on our essay writing and academic support website.'
+              'url': 'https://American Academic Consulting Group.com/cookies',
+              'description': 'Read the American Academic Consulting Group Cookie Notice. Learn how we use cookies to enhance your experience on our essay writing and academic support website.'
             }),
           }}
         />

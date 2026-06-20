@@ -16,13 +16,13 @@ const Hero = () => {
   };
 
   return (
-    <section className="bg-gradient-to-r from-indigo-50 to-indigo-50 py-16 px-6" aria-label="ProEssayWorks Hero">
+    <section className="bg-gradient-to-r from-indigo-50 to-indigo-50 py-16 px-6" aria-label="American Academic Consulting Group Hero">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between">
         
         {/* Left Section */}
         <header className="md:w-1/2 space-y-6 text-center md:text-left">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
-            ProEssayWorks: <br />
+            American Academic Consulting Group: <br />
             <span className="text-gray-800">get help from real pros</span>
           </h1>
 
@@ -63,7 +63,7 @@ const Hero = () => {
         <div className="md:w-1/2 relative mt-10 md:mt-0 flex justify-center">
           <Image
             src="/wobg.png"
-            alt="Student using ProEssayWorks essay writing service on laptop"
+            alt="Student using American Academic Consulting Group essay writing service on laptop"
             width={350}
             height={350}
             className="w-[300px] md:w-[350px] rounded-md object-cover relative z-10"
@@ -75,7 +75,7 @@ const Hero = () => {
             <FaStar className="text-yellow-400" aria-hidden="true" />
             <div className="">
               <p className="text-md text-indigo-500 font-semibold">4.8/5</p>
-              <p className="text-xs text-gray-500">ProESsayWorks is rated</p>
+              <p className="text-xs text-gray-500">American Academic Consulting Group is rated</p>
             </div>
           </div>
 

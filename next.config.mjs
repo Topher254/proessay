@@ -1,7 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Remove this line temporarily: output: 'export',
   images: {
-    domains: ['proessayworks.com'],
+    unoptimized: true,
+    domains: ['American Academic Consulting Group.com'],
   },
 };
 

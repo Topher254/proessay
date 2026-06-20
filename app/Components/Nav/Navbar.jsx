@@ -17,7 +17,7 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'About us', path: '/about' },
-    { name: 'Writers', path: '/writers' },
+    // { name: 'Writers', path: '/writers' },
     { name: 'Order any Assignment', path: '/gethelp' },
     { name: 'Reviews', path: '/reviews' },
     { name: 'Blog', path: '/blog' }
@@ -44,7 +44,7 @@ const Navbar = () => {
         <Link href="/" className="   transition-colors flex items-center">
           <Image
             src="/logo.png"
-            alt="ProEssayWorks Logo"
+            alt="American Academic Consulting Group Logo"
             width={64}
             height={64}
             className="w-32 h-10 object-contain"

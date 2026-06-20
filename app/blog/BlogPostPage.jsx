@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { FaFacebook, FaTwitter, FaLinkedin } from 'react-icons/fa';
 import { ArrowLeft } from 'lucide-react';
 
-const WP_API = 'https://proessayworks.com/myblog/wp-json/wp/v2/posts';
+const WP_API = 'https://American Academic Consulting Group.com/myblog/wp-json/wp/v2/posts';
 
 function estimateReadTime(text) {
   const words = text ? text.split(/\s+/).length : 0;
@@ -66,13 +66,13 @@ export default function BlogPostPage() {
 
   // Author name
   const author =
-    post._embedded?.author?.[0]?.name || 'ProEssayWorks Team';
+    post._embedded?.author?.[0]?.name || 'American Academic Consulting Group Team';
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-indigo-50 to-indigo-50 py-12 px-4 sm:px-6 lg:px-8">
       <Head>
-        <title>{post.title.rendered} | ProEssayWorks Blog</title>
-        <meta name="description" content={`Read "${post.title.rendered}" on ProEssayWorks.`} />
+        <title>{post.title.rendered} | American Academic Consulting Group Blog</title>
+        <meta name="description" content={`Read "${post.title.rendered}" on American Academic Consulting Group.`} />
       </Head>
 
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-12">
@@ -125,8 +125,8 @@ export default function BlogPostPage() {
               <h2 className="text-xl font-bold text-indigo-800 mb-2">Need help with your essay?</h2>
               <p className="text-gray-700 mb-4">
                 Get expert writing assistance from{' '}
-                <a href="https://proessayworks.com" className="text-indigo-700 font-semibold">
-                  ProEssayWorks
+                <a href="https://American Academic Consulting Group.com" className="text-indigo-700 font-semibold">
+                  American Academic Consulting Group
                 </a>. Our team is ready to help you succeed!
               </p>
               <Link

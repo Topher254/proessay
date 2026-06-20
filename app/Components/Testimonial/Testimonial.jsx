@@ -333,7 +333,7 @@ export default function Testimonials() {
               </h2>
               <p className="text-gray-600 text-lg mb-8">
                 Discover the experiences from those who have trusted us to enhance 
-                their academic journey. Browse through the ProEssayWorks reviews and 
+                their academic journey. Browse through the American Academic Consulting Group reviews and 
                 select your expert!
               </p>
               <div className="flex gap-4">

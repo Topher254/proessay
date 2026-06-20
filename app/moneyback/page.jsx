@@ -6,12 +6,12 @@ const MoneyBackPromisePage = () => {
   return (
     <>
       <Head>
-        <title>Money-Back Promise | ProEssayWorks</title>
-        <meta name="description" content="Learn about the ProEssayWorks money-back guarantee. We stand behind our essay writing services with a comprehensive refund policy for your peace of mind." />
-        <meta property="og:title" content="Money-Back Promise | ProEssayWorks" />
-        <meta property="og:description" content="Learn about the ProEssayWorks money-back guarantee. We stand behind our essay writing services with a comprehensive refund policy for your peace of mind." />
+        <title>Money-Back Promise | American Academic Consulting Group</title>
+        <meta name="description" content="Learn about the American Academic Consulting Group money-back guarantee. We stand behind our essay writing services with a comprehensive refund policy for your peace of mind." />
+        <meta property="og:title" content="Money-Back Promise | American Academic Consulting Group" />
+        <meta property="og:description" content="Learn about the American Academic Consulting Group money-back guarantee. We stand behind our essay writing services with a comprehensive refund policy for your peace of mind." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://proessayworks.com/money-back" />
+        <meta property="og:url" content="https://American Academic Consulting Group.com/money-back" />
         <meta name="keywords" content="refund, money back, guarantee, essay for sale, service agreement" />
         <script
           type="application/ld+json"
@@ -20,8 +20,8 @@ const MoneyBackPromisePage = () => {
               '@context': 'https://schema.org',
               '@type': 'WebPage',
               'name': 'Money-Back Promise',
-              'url': 'https://proessayworks.com/money-back',
-              'description': 'Learn about the ProEssayWorks money-back guarantee. We stand behind our essay writing services with a comprehensive refund policy for your peace of mind.'
+              'url': 'https://American Academic Consulting Group.com/money-back',
+              'description': 'Learn about the American Academic Consulting Group money-back guarantee. We stand behind our essay writing services with a comprehensive refund policy for your peace of mind.'
             }),
           }}
         />
